@@ -1,10 +1,9 @@
 pipeline {
-    agent {
-            docker {
-                image 'docker:24.0.7-dind' // or any version with docker CLI
-                args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
+    agent any
+    docker {
+           image 'docker:24.0.7' // Docker CLI in container
+           args '-v /var/run/docker.sock:/var/run/docker.sock' // allow access to host Docker
             }
-        }
     tools{
            jdk 'JDK 21'         // Name must match what you added in Global Tool Config
            maven 'maven-3.9.9'
