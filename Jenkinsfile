@@ -11,7 +11,6 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stages {
                 stage('Check Docker') {
                     steps {
                         sh 'docker --version'
@@ -24,5 +23,4 @@ pipeline {
                     }
                 }
             }
-    }
 }
