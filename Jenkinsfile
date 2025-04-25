@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven 3.8.5' // Make sure this Maven version is installed/configured in Jenkins
-    }
-
     environment {
         APP_NAME = "spring-boot-demo"
     }
