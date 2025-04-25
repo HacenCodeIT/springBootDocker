@@ -1,7 +1,8 @@
 pipeline {
     agent any
     tools{
-        maven 'maven'
+           jdk 'JDK 21'         // Name must match what you added in Global Tool Config
+           maven 'maven-3.9.9'
     }
     stages{
         stage('Build Maven'){
