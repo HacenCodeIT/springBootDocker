@@ -1,9 +1,10 @@
 pipeline {
     agent any
 
-    environment {
-        APP_NAME = "spring-boot-demo"
-    }
+   tools {
+              maven 'maven' // 👈 This must match the name you just added
+          }
+
     stages {
         stage('Clone Repository') {
             steps {
