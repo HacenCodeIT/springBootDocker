@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/HacenCodeIT/springBootDocker.git'
+                git branch: 'dev', url: 'https://github.com/HacenCodeIT/springBootDocker.git'
             }
         }
 
