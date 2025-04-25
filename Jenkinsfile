@@ -11,13 +11,18 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Build docker image'){
-            steps{
-                script{
-                    sh 'docker --version' // verify
-                    sh 'docker build -t HacenCodeIT/springbootDocker .'
+        stages {
+                stage('Check Docker') {
+                    steps {
+                        sh 'docker --version'
+                    }
+                }
+
+                stage('Build Docker Image') {
+                    steps {
+                        sh 'docker build -t HacenCodeIT/springBootDocker .'
+                    }
                 }
             }
-        }
     }
 }
