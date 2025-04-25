@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+            docker {
+                image 'docker:24.0.7-dind' // or any version with docker CLI
+                args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
+            }
+        }
     tools{
            jdk 'JDK 21'         // Name must match what you added in Global Tool Config
            maven 'maven-3.9.9'
@@ -14,6 +19,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
+                    sh 'docker --version' // verify
                     sh 'docker build -t HacenCodeIT/springbootDocker .'
                 }
             }
