@@ -1,5 +1,9 @@
 pipeline {
     agent any
+        docker {
+          image 'maven:3.9.6-eclipse-temurin-21' // Maven + JDK 21
+          args '-v /root/.m2:/root/.m2' // optional for caching dependencies
+        }
 
    tools {
               jdk 'JDK 21'  // Make sure this name matches what you configured in Jenkins
