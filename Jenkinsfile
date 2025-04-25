@@ -1,6 +1,6 @@
 pipeline {
     agent any
-        docker {
+    docker {
           image 'maven:3.9.6-eclipse-temurin-21' // Maven + JDK 21
           args '-v /root/.m2:/root/.m2' // optional for caching dependencies
         }
