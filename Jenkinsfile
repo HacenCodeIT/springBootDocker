@@ -3,7 +3,6 @@ pipeline {
 
    tools {
               jdk 'JDK 21'  // Make sure this name matches what you configured in Jenkins
-              maven 'Maven' // 👈 This must match the name you just added
           }
    environment {
            // Set JAVA_HOME globally for all stages in the pipeline
