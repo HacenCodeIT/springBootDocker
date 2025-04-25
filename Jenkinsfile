@@ -1,15 +1,6 @@
 pipeline {
     agent any
 
-   tools {
-              jdk 'JDK 21'  // Make sure this name matches what you configured in Jenkins
-              maven 'Maven' // 👈 This must match the name you just added
-          }
-   environment {
-           // Set JAVA_HOME globally for all stages in the pipeline
-           JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'  // Adjust the path based on your system
-       }
-
     stages {
         stage('Clone Repository') {
             steps {
