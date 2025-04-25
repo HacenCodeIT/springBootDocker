@@ -4,9 +4,6 @@ pipeline {
     environment {
         APP_NAME = "spring-boot-demo"
     }
-   tools {
-        maven 'maven'  // Make sure this matches the name you configured
-    }
     stages {
         stage('Clone Repository') {
             steps {
