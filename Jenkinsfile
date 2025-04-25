@@ -2,7 +2,7 @@ pipeline {
     agent any
 
    tools {
-              maven 'maven' // 👈 This must match the name you just added
+              maven 'Maven' // 👈 This must match the name you just added
           }
 
     stages {
